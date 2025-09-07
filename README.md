@@ -29,11 +29,11 @@ import {SoundCloud} from 'ionic-sound-cloud-loader-api';
  * Searching on soundcloud
  */
 const reqHeaders = {
-  'User-Agent': '',
+  'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.118 Safari/537.36',
 }
 
 
-await SoundCloud.connect(this.globalService.defaultHeaders);
+await SoundCloud.connect(reqHeaders);
 
 const videos = await SoundCloud.search({
   query: string;
@@ -65,13 +65,13 @@ console.log(videos);
 import {SoundCloud} from 'ionic-sound-cloud-loader-api';
 
 const reqHeaders = {
-  'User-Agent': '',
+  'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.118 Safari/537.36',
 }
 
 /**
  * Search track by url
  */
-await SoundCloud.connect(this.globalService.defaultHeaders);
+await SoundCloud.connect(reqHeaders);
 
 const video = await SoundCloud.getTrack(url, reqHeaders);
 console.log(video);
@@ -206,10 +206,15 @@ console.log(video);
 ```javascript
 import {SoundCloud} from 'ionic-sound-cloud-loader-api';
 
+
+const reqHeaders = {
+  'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.118 Safari/537.36',
+}
+
 /**
  * Download by Url
  */
-await SoundCloud.connect(this.globalService.defaultHeaders);
+await SoundCloud.connect(reqHeaders);
 
 const downloadUrl = await SoundCloud.download(url, reqHeaders);
 console.log(downloadUrl);
